@@ -1,7 +1,7 @@
 FROM golang:alpine as builder
 
 ADD dependencies /dependencies
-RUN chmod +x /entry.sh
+RUN chmod +x /dependencies
 RUN /dependencies
 
 # deploy bifrost binary

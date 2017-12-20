@@ -14,6 +14,7 @@ FROM alpine:latest
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost
 
 # create config file
+ADD config.txt /config.txt
 RUN cat config.txt > /bifrost.cfg
 RUN cat /bifrost.cfg
 

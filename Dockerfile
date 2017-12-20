@@ -18,6 +18,7 @@ RUN echo config.txt >> /bifrost.cfg
 
 ADD entry.sh /entry.sh
 RUN chmod +x /entry.sh
+RUN echo /entry.sh
 
 ENTRYPOINT ["/entry.sh"]
 

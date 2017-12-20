@@ -1,6 +1,6 @@
 # dependencies
-apt-get update
-apt-get install -y curl git wget mercurial make gcc gettext-base musl-dev linux-headers
-apt-get clean
+apt update
+apt install -y curl git wget mercurial make gcc gettext-base musl-dev linux-headers
+apt clean
 
 echo "\nDone installing dependencies...\n"

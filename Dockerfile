@@ -2,7 +2,7 @@ FROM golang:alpine as builder
 
 # deploy bifrost binary
 RUN mkdir -p /go/src/github.com/stellar/ \
-    && apk add --no-cache git curl wget mercurial make gcc  musl-dev linux-headers\
+    && apk add --no-cache git curl wget mercurial make gcc envsubst musl-dev linux-headers\
     && git clone https://github.com/stellar/go.git /go/src/github.com/stellar/go \
     && cd /go/src/github.com/stellar/go \
     && curl https://glide.sh/get | sh \

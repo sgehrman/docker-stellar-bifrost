@@ -14,11 +14,11 @@ FROM alpine:latest
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost
 
 # create config file
-RUN echo config.txt >> /bifrost.cfg
+RUN cat config.txt > /bifrost.cfg
+RUN cat /bifrost.cfg
 
 ADD entry.sh /entry.sh
 RUN chmod +x /entry.sh
-RUN echo /entry.sh
 
 ENTRYPOINT ["/entry.sh"]
 

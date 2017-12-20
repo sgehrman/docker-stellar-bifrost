@@ -1,6 +1,6 @@
 # dependencies
-apt update
-apt install -y curl git wget mercurial make gcc gettext-base musl-dev linux-headers
-apt clean
+apk update
+apk add curl git wget mercurial make gcc gettext-base musl-dev linux-headers
+apk clean
 
 echo "\nDone installing dependencies...\n"

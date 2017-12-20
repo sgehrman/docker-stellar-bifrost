@@ -1,0 +1,25 @@
+bitcoind:
+    image: sgehrman/bifrost
+    volumes:
+      - ~/test-volumes/bifrost:/bifrost
+    restart: unless-stopped
+    environment:
+      MASTER_PUBLIC_KEY: xyx
+      BIFROST_BITCOIN_RPC_SERVER: xyx
+      RPC_USER: xyx
+      RPC_PASS: xyx
+      TESTNET: 1
+      MINIMUM_VALUE_BTC: xyx
+      BIFROST_ETHEREUM_RPC_SERVER: xyx
+      NETWORK_ID: xyx
+      MINIMUM_VALUE_ETH: xyx
+      BIFROST_STELLAR_ISSUER_PUBLIC_KEY: xyx
+      BIFROST_STELLAR_SIGNER_SECRET_KEY: xyx
+      TOKEN_ASSET_CODE: xyx
+      NEEDS_AUTHORIZE: xyx
+      BIFROST_STELLAR_HORIZON: xyx
+      NETWORK_PASSPHRASE: xyx
+      BIFROST_DB_TYPE: xyx
+      BIFROST_DB_DSN: xyx
+    ports:
+      - 8000:8000/tcp

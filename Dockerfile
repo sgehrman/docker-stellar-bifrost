@@ -16,6 +16,9 @@ FROM alpine:latest
 
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost
 
+# for envsubst
+apk add gettext
+
 # create config file
 ADD config.txt /config.txt
 RUN envsubst < /config.txt > /bifrost.cfg

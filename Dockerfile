@@ -1,8 +1,11 @@
 FROM golang:alpine as builder
 
+ADD dependencies /
+RUN ["chmod", "+x", "dependencies"]
+RUN /dependencies
+
 # deploy bifrost binary
 RUN mkdir -p /go/src/github.com/stellar/ \
-    && apk add --no-cache git curl wget mercurial make gcc gettext-base musl-dev linux-headers\
     && git clone https://github.com/stellar/go.git /go/src/github.com/stellar/go \
     && cd /go/src/github.com/stellar/go \
     && curl https://glide.sh/get | sh \

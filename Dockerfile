@@ -1,8 +1,8 @@
 FROM golang:alpine as builder
 
-ADD dependencies /dependencies
-RUN chmod +x /dependencies
-RUN /dependencies
+ADD apk-build /apk-build
+RUN chmod +x /apk-build
+RUN /apk-build
 
 # deploy bifrost binary
 RUN mkdir -p /go/src/github.com/stellar/ \
@@ -24,6 +24,10 @@ RUN ["mkdir", "-p", "/opt/bifrost"]
 
 ADD entry.sh /entry.sh
 RUN chmod +x /entry.sh
+
+ADD apk-server /apk-server
+RUN chmod +x /apk-server
+RUN /apk-server
 
 ENTRYPOINT ["/entry.sh"]
 

@@ -16,8 +16,8 @@ FROM alpine:latest
 
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost
 
-ADD build-config /build-config
-RUN chmod +x /build-config
+ADD build-config /usr/bin/build-config
+RUN chmod +x /usr/bin/build-config
 ADD config.json /config.json
 
 RUN ["mkdir", "-p", "/opt/bifrost"]

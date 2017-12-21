@@ -18,7 +18,7 @@ COPY --from=builder /go/bin/bifrost /go/bin/bifrost
 
 ADD build-config /usr/bin/build-config
 RUN chmod +x /usr/bin/build-config
-ADD config.json /config.toml
+ADD config.toml /config.toml
 
 RUN ["mkdir", "-p", "/opt/bifrost"]
 

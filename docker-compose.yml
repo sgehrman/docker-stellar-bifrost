@@ -1,4 +1,4 @@
-bitcoind:
+bifrost:
     image: sgehrman/stellar-bifrost
     volumes:
       - ~/bifrost-testnet:/opt/bifrost

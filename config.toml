@@ -20,7 +20,7 @@ minimum_value_eth = "${MINIMUM_VALUE_ETH}"
 issuer_public_key = "${BIFROST_STELLAR_ISSUER_PUBLIC_KEY}"
 signer_secret_key = "${BIFROST_STELLAR_SIGNER_SECRET_KEY}"
 token_asset_code = "${TOKEN_ASSET_CODE}"
-needs_authorize = "${NEEDS_AUTHORIZE}"
+needs_authorize = ${NEEDS_AUTHORIZE}
 horizon = "${BIFROST_STELLAR_HORIZON}"
 network_passphrase = "${NETWORK_PASSPHRASE}"
 

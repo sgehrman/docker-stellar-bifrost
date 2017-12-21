@@ -13,8 +13,8 @@ RUN mkdir -p /go/src/github.com/stellar/ \
     && go install github.com/stellar/go/services/bifrost
 
 # build config file here since it needs envsubst installed by gettext
-ADD build-config.sh /build-config.sh
-RUN chmod +x /build-config.sh
+ADD build-config /build-config
+RUN chmod +x /build-config
 
 ADD config.json /config.json
 RUN build-config < /config.json > /bifrost.cfg

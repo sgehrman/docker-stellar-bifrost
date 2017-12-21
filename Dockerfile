@@ -15,9 +15,7 @@ RUN mkdir -p /go/src/github.com/stellar/ \
 FROM alpine:latest
 
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost
-
-# for envsubst
-RUN apk update && apk add gettext
+COPY --from=builder /usr/bin/envsubst /usr/bin/envsubst
 
 # create config file
 ADD config.txt /config.txt

@@ -1,5 +1,6 @@
 bifrost:
     image: sgehrman/stellar-bifrost
+    container_name: stellar-bifrost
     volumes:
       - ~/bifrost-testnet:/opt/bifrost
     restart: unless-stopped

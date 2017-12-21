@@ -13,8 +13,8 @@ RUN mkdir -p /go/src/github.com/stellar/ \
     && go install github.com/stellar/go/services/bifrost
 
 # build config file here since it needs envsubst installed by gettext
-ADD config.txt /config.txt
-RUN envsubst < /config.txt > /bifrost.cfg
+ADD config.json /config.json
+RUN envsubst < /config.json > /bifrost.cfg
 
 FROM alpine:latest
 
@@ -23,6 +23,8 @@ COPY --from=builder /bifrost.cfg /bifrost.cfg
 
 # show config file
 RUN cat /bifrost.cfg
+
+RUN ["mkdir", "-p", "/opt/bifrost"]
 
 ADD entry.sh /entry.sh
 RUN chmod +x /entry.sh

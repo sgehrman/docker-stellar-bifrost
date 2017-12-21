@@ -1,25 +1,25 @@
 bitcoind:
     image: sgehrman/bifrost
     volumes:
-      - ~/test-volumes/bifrost:/bifrost
+      - ~/bifrost-testnet:/opt/bifrost
     restart: unless-stopped
     environment:
-      MASTER_PUBLIC_KEY: xyx
-      BIFROST_BITCOIN_RPC_SERVER: xyx
-      RPC_USER: xyx
-      RPC_PASS: xyx
-      TESTNET: 1
-      MINIMUM_VALUE_BTC: xyx
-      BIFROST_ETHEREUM_RPC_SERVER: xyx
-      NETWORK_ID: xyx
-      MINIMUM_VALUE_ETH: xyx
-      BIFROST_STELLAR_ISSUER_PUBLIC_KEY: xyx
-      BIFROST_STELLAR_SIGNER_SECRET_KEY: xyx
-      TOKEN_ASSET_CODE: xyx
-      NEEDS_AUTHORIZE: xyx
-      BIFROST_STELLAR_HORIZON: xyx
-      NETWORK_PASSPHRASE: xyx
-      BIFROST_DB_TYPE: xyx
-      BIFROST_DB_DSN: xyx
+      MASTER_PUBLIC_KEY: "xpub6C79eBsW2XQbzfXFsRv51Lac6Ckx5nyqf9cUmFr1fuAEHGXmpq8oPNMqCpH1jTdwP3s5SD644R8KK4cVytk9Jxcxcb7JsfNxcGNRbG5q4pq"
+      BIFROST_BITCOIN_RPC_SERVER: "http://horizon:8000"
+      RPC_USER: "stellar"
+      RPC_PASS: "password"
+      TESTNET: "true"
+      MINIMUM_VALUE_BTC:  "0.00001"
+      BIFROST_ETHEREUM_RPC_SERVER: "http://localhost:8545"
+      NETWORK_ID: "3"
+      MINIMUM_VALUE_ETH: "0.00001"
+      BIFROST_STELLAR_ISSUER_PUBLIC_KEY: "GD5H2WSHTWVTZI5BR3V5XTRBCFDMEOKFMXR4Y4PU337K7WS55UAADI5T"
+      BIFROST_STELLAR_SIGNER_SECRET_KEY: "SD4DFZ433RUGNCMCG4JGWK47R5KOHQOS4T5LXGLGBLY7ZLBUZQTTONVQ"
+      TOKEN_ASSET_CODE: "LMB"
+      NEEDS_AUTHORIZE: "true"
+      BIFROST_STELLAR_HORIZON: "http://horizon:8000"
+      NETWORK_PASSPHRASE: "Test SDF Network ; September 2015"
+      BIFROST_DB_TYPE: "postgres"
+      BIFROST_DB_DSN: "postgres://stellar:password@localhost:8000?sslmode=disable"
     ports:
       - 8000:8000/tcp

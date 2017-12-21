@@ -14,8 +14,8 @@ RUN mkdir -p /go/src/github.com/stellar/ \
 
 # build config file here since it needs envsubst installed by gettext
 ADD config.json /config.json
-RUN envsubst < /config.json > /bifrost.cfg
-
+RUN printf '%s\n' < /config.json > /bifrost.cfg
+ 
 FROM alpine:latest
 
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost

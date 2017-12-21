@@ -1,5 +1,5 @@
 bitcoind:
-    image: sgehrman/bifrost
+    image: sgehrman/stellar-bifrost
     volumes:
       - ~/bifrost-testnet:/opt/bifrost
     restart: unless-stopped

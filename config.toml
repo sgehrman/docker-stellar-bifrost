@@ -7,13 +7,13 @@ master_public_key = "${MASTER_PUBLIC_KEY}"
 rpc_server = "${BIFROST_BITCOIN_RPC_SERVER}"
 rpc_user = "${RPC_USER}"
 rpc_pass = "${RPC_PASS}"
-testnet = "${TESTNET}"
+testnet = ${TESTNET}
 minimum_value_btc = "${MINIMUM_VALUE_BTC}"
 
 [ethereum]
 master_public_key = "${MASTER_PUBLIC_KEY}"
 rpc_server = "${BIFROST_ETHEREUM_RPC_SERVER}"
-network_id = "${NETWORK_ID}"
+network_id = ${NETWORK_ID}
 minimum_value_eth = "${MINIMUM_VALUE_ETH}"
 
 [stellar]

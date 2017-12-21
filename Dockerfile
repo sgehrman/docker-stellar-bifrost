@@ -17,7 +17,7 @@ ADD build-config /build-config
 RUN chmod +x /build-config
 
 ADD config.json /config.json
-RUN /build-config < /config.json > /bifrost.cfg
+RUN /build-config /config.json > /bifrost.cfg
 
 FROM alpine:latest
 

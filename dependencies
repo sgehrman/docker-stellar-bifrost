@@ -2,6 +2,6 @@
 apk update
 
 apk add curl git wget mercurial make gcc musl-dev linux-headers gettext
-apk add libpq libsqlite3-dev libsasl2 postgresql-client postgresql postgresql-contrib sudo vim zlib1g-dev supervisor
+apk add libpq sqlite-dev libsasl postgresql-client postgresql postgresql-contrib sudo vim zlib1g-dev supervisor
 
 echo "Done installing dependencies..."

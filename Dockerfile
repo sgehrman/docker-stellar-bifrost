@@ -12,6 +12,10 @@ RUN mkdir -p /go/src/github.com/stellar/ \
     && glide install \
     && go install github.com/stellar/go/services/bifrost
 
+# build config file here since it needs envsubst installed by gettext
+ADD config.txt /config.txt
+RUN envsubst < /config.txt > /bifrost.cfg
+
 FROM alpine:latest
 
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost

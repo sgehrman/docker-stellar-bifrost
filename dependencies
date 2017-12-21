@@ -2,8 +2,4 @@
 apk update
 apk add curl git wget mercurial make gcc musl-dev linux-headers gettext
 
-# build config file here since it needs envsubst installed by gettext
-ADD config.txt /config.txt
-RUN envsubst < /config.txt > /bifrost.cfg
-
 echo "Done installing dependencies..."

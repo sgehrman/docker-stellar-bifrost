@@ -15,11 +15,9 @@ RUN mkdir -p /go/src/github.com/stellar/ \
 FROM alpine:latest
 
 COPY --from=builder /go/bin/bifrost /go/bin/bifrost
-COPY --from=builder /usr/bin/envsubst /usr/bin/envsubst
+COPY --from=builder /bifrost.cfg /bifrost.cfg
 
-# create config file
-ADD config.txt /config.txt
-RUN envsubst < /config.txt > /bifrost.cfg
+# show config file
 RUN cat /bifrost.cfg
 
 ADD entry.sh /entry.sh
